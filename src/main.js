@@ -270,7 +270,7 @@ ScrollTrigger.create({ trigger: '.apply', start: 'top 60%', onEnter: () => { E.l
 
 // Entrada: o jovem sai de trás da cortina
 if (!reduced) {
-  walk.intro = innerWidth * 0.3;
+  walk.intro = innerWidth * (narrow() ? 0.55 : 0.3);
   gsap.to(walk, { intro: 0, duration: 3.2, ease: 'sine.out', delay: 0.2 });
   gsap.from([...T.hero.children, T['hero-below']], { opacity: 0, y: 14, duration: 1.1, ease: 'power3.out', stagger: 0.08, delay: 0.45, clearProps: 'transform' });
 }

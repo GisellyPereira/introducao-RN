@@ -186,7 +186,7 @@ h3 { font-size: clamp(19px, 1.5vw, 24px); line-height: 1.2; }
   .below { left: var(--x); right: 18px; grid-template-columns: 1fr; gap: 8px; top: calc(63% + 14px); }
   .sc--hero .below { display: none; }
   .hero__gap { right: 14vw; width: 40vw; }
-  .hero__curtain { right: -40vw; }
+  .hero__curtain { right: auto; left: max(8vw, calc(100vw - 40vh)); }
   .hero__ledge { left: 20vw; height: 4vh; }
   .hero__youth { left: 30vw; height: 54vh; bottom: 3.6vh; }
   .tree__hand { left: 52vw; height: 58vh; }
