@@ -22,7 +22,7 @@ void main(){
 
 export function criarCortina(img, canvas) {
   const gl = canvas.getContext('webgl', { premultipliedAlpha: false, alpha: true });
-  if (!gl) return null;
+  if (!gl) return cortina2d(img, canvas);
   const sh = (tipo, src) => { const s = gl.createShader(tipo); gl.shaderSource(s, src); gl.compileShader(s); return s; };
   const pr = gl.createProgram();
   gl.attachShader(pr, sh(gl.VERTEX_SHADER, VS)); gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, FS));
@@ -54,6 +54,30 @@ export function criarCortina(img, canvas) {
       gl.clearColor(0, 0, 0, 0); gl.clear(gl.COLOR_BUFFER_BIT);
       gl.uniform1f(u.t, t); gl.uniform1f(u.sopro, sopro);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    },
+  };
+}
+
+// Sem WebGL (alguns navegadores e celulares): a mesma onda feita em faixas horizontais no canvas 2D
+function cortina2d(img, canvas) {
+  const ctx = canvas.getContext('2d');
+  const onda = (y, x, t, sopro) => {
+    const solto = Math.min(1, Math.max(0, (y - 0.05) / 0.95)); const sm = solto * solto * (3 - 2 * solto);
+    return sm * (Math.sin(y * 9 + t * 1.7 + x * 6) * 0.010 + Math.sin(y * 17 - t * 2.3) * 0.004)
+      + sm * sopro * Math.sin(y * 6 - t * 5.5 + x * 3) * 0.045;
+  };
+  return {
+    desenhar(t, sopro) {
+      if (!img.naturalWidth) return;
+      const r = canvas.getBoundingClientRect(), dpr = Math.min(devicePixelRatio, 2);
+      const w = Math.round(r.width * dpr), h = Math.round(r.height * dpr);
+      if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; }
+      ctx.clearRect(0, 0, w, h);
+      const faixa = Math.max(2, Math.round(3 * dpr)), sy = img.naturalHeight / h;
+      for (let y = 0; y < h; y += faixa) {
+        const v = y / h, d = onda(v, 0.3, t, sopro) * w;
+        ctx.drawImage(img, 0, y * sy, img.naturalWidth, faixa * sy, -d, y, w, faixa);
+      }
     },
   };
 }
