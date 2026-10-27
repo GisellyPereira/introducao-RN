@@ -2,6 +2,8 @@ import './style.css';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
+import { criarJovem } from './rig.js';
+import { criarCortina } from './tecido.js';
 
 gsap.registerPlugin(ScrollTrigger);
 const $ = (s, el = document) => el.querySelector(s);
@@ -41,6 +43,29 @@ const E = {
   branches: $('[data-branches]'), qs: $$('[data-q]'), askLines: $('[data-ask-lines]'),
   label: $('[data-label]'), mid: $('.chrome__guide--mid'),
 };
+
+/* Jovem articulado: a fase da caminhada vem da distância percorrida, então o passo
+   acompanha o deslocamento (sem patinar) e ele para na pose da pintura quando o scroll para */
+const jovem = criarJovem(E.youth);
+const cortina = criarCortina(E.fxCurtain, E.heroCurtain);
+let sopro = 0; // a cortina balança quando o jovem passa por ela
+const walk = { x: null, t: 0, fase: 0.25, amp: 0, intro: 0 };
+function andar(x, time) {
+  const unit = E.youth.getBoundingClientRect().height / 1170; // px por unidade da imagem-mãe
+  if (walk.x === null) walk.x = x;
+  const dx = x - walk.x, dt = Math.max(1 / 120, time - walk.t || 1 / 60);
+  walk.x = x; walk.t = time;
+  walk.fase += -dx / (400 * unit); // 400 unidades = dois passos
+  const alvo = clamp(Math.abs(dx / dt) / (330 * unit));
+  walk.amp += (alvo - walk.amp) * (alvo > walk.amp ? 0.25 : 0.08);
+  // ao parar, termina o passo até a pose de repouso (pernas juntas) em vez de congelar no meio
+  if (walk.amp < 0.02) { walk.amp = 0; walk.fase = Math.round(walk.fase * 2) / 2; }
+  E.youth.style.translate = `${x.toFixed(1)}px 0`;
+  jovem.pose(walk.fase, walk.amp);
+  // empurrão na cortina: forte enquanto ele ainda está saindo, depois assenta devagar
+  sopro += ((walk.intro > innerWidth * 0.08 ? 1 : 0) - sopro) * 0.04;
+  if (cortina && E.heroCurtain.style.opacity !== '0') cortina.desenhar(time, sopro);
+}
 
 const on = (name, v) => sc[name].classList.toggle('on', v);
 const fade = (node, o, dy = 18) => {
@@ -124,7 +149,7 @@ function render(p, time) {
   on('hero', p < 0.095);
   fade(T.hero, 1 - ramp(p, 0.015, 0.04));
   fade(T['hero-below'], 1 - ramp(p, 0.015, 0.04));
-  E.youth.style.translate = `${lerp(0, -5, ramp(p, 0, 0.05))}vw 0`;
+  andar(lerp(0, -0.16, ramp(p, 0, 0.05)) * vw + walk.intro, time);
   // A cortina fecha por cima dele e toma a tela inteira (com zoom na trama)
   const cc = ramp(p, 0.025, 0.088);
   E.fxCurtain.style.opacity = (p > 0.024 && p < 0.115) ? 1 - ramp(p, 0.098, 0.112) : 0;
@@ -245,7 +270,8 @@ ScrollTrigger.create({ trigger: '.apply', start: 'top 60%', onEnter: () => { E.l
 
 // Entrada: o jovem sai de trás da cortina
 if (!reduced) {
-  gsap.from(E.youth, { xPercent: -45, opacity: 0, duration: 1.8, ease: 'power3.out', delay: 0.15 });
+  walk.intro = innerWidth * 0.3;
+  gsap.to(walk, { intro: 0, duration: 3.2, ease: 'sine.out', delay: 0.2 });
   gsap.from([...T.hero.children, T['hero-below']], { opacity: 0, y: 14, duration: 1.1, ease: 'power3.out', stagger: 0.08, delay: 0.45, clearProps: 'transform' });
 }
 

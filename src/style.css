@@ -70,9 +70,10 @@ h3 { font-size: clamp(19px, 1.5vw, 24px); line-height: 1.2; }
 /* 1 — herói */
 .sc--hero { background: var(--azul); }
 .hero__gap { position: absolute; right: 9vw; top: 0; width: 18vw; height: 100%; background: linear-gradient(90deg, #0b0d12, #1a1d24); }
-.hero__curtain { position: absolute; right: 0; top: -5%; height: 108%; width: auto; max-width: none; transform-origin: 100% 50%; }
+.hero__curtain { position: absolute; right: 0; top: -5%; height: 108%; aspect-ratio: 768 / 1350; width: auto; max-width: none; transform-origin: 100% 50%; }
 .hero__ledge { position: absolute; left: 41vw; right: 0; bottom: 0; height: 5.5vh; background: linear-gradient(180deg, #f7f5f0 0%, #e4e0d8 30%, #ccc6bb 100%); box-shadow: 0 -2px 0 rgba(255, 255, 255, 0.6) inset; }
-.hero__youth { position: absolute; left: 57vw; bottom: 4.6vh; height: 82vh; width: auto; max-width: none; will-change: translate, transform; }
+.hero__youth { position: absolute; left: 50vw; bottom: 3.5vh; height: 84vh; width: auto; aspect-ratio: 400 / 1170; max-width: none; overflow: visible; will-change: translate; }
+.hero__curtain { z-index: 1; }
 
 .fx-curtain { position: absolute; z-index: 20; left: 0; top: 0; height: 108%; width: auto; max-width: none; opacity: 0; pointer-events: none; transform-origin: 0 0; will-change: transform, opacity; }
 .fx-sash { position: absolute; z-index: 21; left: 0; top: 0; width: 170vw; max-width: none; opacity: 0; pointer-events: none; will-change: transform, opacity; }

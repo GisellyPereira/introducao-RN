@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@500&family=Pinyon+Script&display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="/img/jovem.webp" />
+  <link rel="preload" as="image" href="/partes/jovem/placa.webp" />
   <link rel="preload" as="image" href="/img/cortina.webp" />
 </head>
 <body class="t-dark">
@@ -36,9 +36,25 @@
         <!-- 1. Jovem saindo da cortina -->
         <div class="sc sc--hero" data-sc="hero">
           <div class="hero__gap" aria-hidden="true"></div>
-          <img class="hero__curtain" src="/img/cortina.webp" alt="" aria-hidden="true" />
+          <canvas class="hero__curtain" data-cortina aria-hidden="true"></canvas>
           <div class="hero__ledge" aria-hidden="true"></div>
-          <img class="hero__youth" data-youth src="/img/jovem.webp" alt="Pintura de um jovem grego de túnica branca e faixa vermelha saindo de trás de uma cortina" />
+          <svg class="hero__youth" data-youth viewBox="230 70 400 1170" role="img" aria-label="Pintura de um jovem grego de túnica branca e faixa vermelha saindo de trás de uma cortina e caminhando">
+            <defs>
+              <clipPath id="c-saia" clipPathUnits="userSpaceOnUse"><rect x="200" y="538" width="500" height="600"/></clipPath>
+              <clipPath id="c-tronco" clipPathUnits="userSpaceOnUse"><rect x="200" y="0" width="500" height="556"/></clipPath>
+              <radialGradient id="sombra"><stop offset="0" stop-color="#06122e" stop-opacity=".55"/><stop offset="1" stop-color="#06122e" stop-opacity="0"/></radialGradient>
+            </defs>
+            <ellipse data-j="sombra" cx="420" cy="1210" rx="170" ry="16" fill="url(#sombra)"/>
+            <g data-j="corpo">
+              <g data-j="braco-tras"><image href="/partes/jovem/braco-tras.webp" x="378" y="392" width="138" height="377"/></g>
+              <g data-j="perna-tras"><image href="/partes/jovem/perna-tras.webp" x="267" y="858" width="162" height="305"/></g>
+              <g data-j="perna-frente"><image href="/partes/jovem/perna-frente.webp" x="368" y="858" width="150" height="353"/></g>
+              <g data-j="saia"><image clip-path="url(#c-saia)" href="/partes/jovem/placa.webp" x="298" y="86" width="279" height="935"/></g>
+              <g data-j="tronco"><image clip-path="url(#c-tronco)" href="/partes/jovem/placa.webp" x="298" y="86" width="279" height="935"/></g>
+              <g data-j="braco"><image href="/partes/jovem/braco.webp" x="383" y="388" width="138" height="377"/></g>
+              <g data-j="manga"><image href="/partes/jovem/manga.webp" x="450" y="429" width="74" height="43"/></g>
+            </g>
+          </svg>
           <div class="txt txt--hero" data-t="hero">
             <h1>A Pera faz você aparecer.</h1>
             <p class="lead">Não uma agência que cobra por hora.<br />Um sócio no resultado.</p>
