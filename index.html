@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Maturi — estúdio que constrói empresas em Fortaleza</title>
+  <meta name="description" content="A Maturi constrói empresas junto com quem tem a ideia: produto, marca e tecnologia, sem taxa de projeto. Entramos como sócios. Estúdio fictício de demonstração." />
+  <meta name="theme-color" content="#0f62c4" />
+  <meta property="og:title" content="Maturi — coragem faz você aparecer" />
+  <meta property="og:image" content="/img/cajueiro.webp" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><path d='M20 4c8 0 13 6 13 14 0 7-5 12-13 12S7 25 7 18C7 10 12 4 20 4z' fill='%23d1452a'/><path d='M14 31c2 5 10 6 12 0-4 2-8 2-12 0z' fill='%23786c5f'/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="/img/rendeira.webp" />
+</head>
+<body>
+  <header class="bar" data-bar>
+    <a href="#inicio" class="logo">maturi</a>
+    <a href="#ideia" class="bar__cta">Mande sua ideia</a>
+  </header>
+
+  <main id="inicio">
+    <!-- O FILME: um palco fixo, o scroll é a linha do tempo -->
+    <section class="film" data-film aria-label="Como a Maturi trabalha">
+      <div class="stage" data-stage>
+
+        <!-- Cena 1: a rendeira no pedestal -->
+        <div class="scene s-hero" data-scene="hero">
+          <img class="s-hero__drape" src="/img/pano.webp" alt="" aria-hidden="true" />
+          <img class="s-hero__figure" src="/img/rendeira.webp" alt="Pintura de uma mulher de vestido de renda branca e faixa vermelha, em pé sobre um pedestal de pedra, segurando um caju" />
+          <div class="copy copy--hero" data-copy="hero">
+            <h1>Coragem faz<br />você aparecer.</h1>
+            <p>Somos um estúdio de Fortaleza que constrói empresas junto com quem tem a ideia.</p>
+            <a href="#perguntas" class="btn btn--line" data-skip>Ver como funciona</a>
+          </div>
+        </div>
+
+        <!-- Cena 2: mergulho no cajueiro e a colheita -->
+        <div class="scene s-tree" data-scene="tree">
+          <img class="s-tree__img" data-tree src="/img/cajueiro.webp" alt="" aria-hidden="true" />
+          <img class="s-tree__img s-tree__pick" data-pick src="/img/colheita.webp" alt="Pintura de duas mãos com punho de renda colhendo um caju do galho" />
+          <div class="s-tree__veil" aria-hidden="true"></div>
+          <div class="copy copy--ink" data-copy="tree">
+            <h2>A gente constrói.</h2>
+            <p>Produto, marca e tecnologia feitos por um time só, do primeiro rascunho ao primeiro cliente.</p>
+          </div>
+        </div>
+
+        <!-- Cena 3: o retrato -->
+        <div class="scene s-portrait" data-scene="portrait">
+          <img src="/img/retrato.webp" alt="Retrato renascentista de um jovem de veludo verde olhando para um caju que segura na mão" />
+          <div class="copy copy--ink" data-copy="portrait">
+            <h2>E divide o que<br />ela render.</h2>
+            <p>Não cobramos pelo trabalho. Entramos como sócios e só ganhamos quando a empresa cresce.</p>
+          </div>
+        </div>
+
+        <!-- Transição em retícula -->
+        <canvas class="dither" data-dither aria-hidden="true"></canvas>
+
+        <!-- Cena 4: céu e jangada -->
+        <div class="scene s-sky" data-scene="sky">
+          <img class="s-sky__bg" src="/img/ceu.webp" alt="" aria-hidden="true" />
+          <img class="s-sky__raft" data-raft src="/img/jangada.webp" alt="Pintura surreal de uma jangada carregando um caju gigante, flutuando no céu" />
+          <div class="copy copy--sky" data-copy="sky">
+            <h2>Sem mensalidade.<br />Sem taxa de projeto.</h2>
+            <p>Uma parte da empresa em troca do time inteiro trabalhando nela. Se não der fruto, a gente também não colhe.</p>
+          </div>
+        </div>
+
+        <!-- Cena 5: a abóbada -->
+        <div class="scene s-vault" data-scene="vault">
+          <div class="s-vault__dome" data-dome><img src="/img/abobada.webp" alt="Teto de igreja barroca visto de baixo, com molduras douradas e um caju pintado no centro" /></div>
+          <div class="copy copy--ink copy--vault" data-copy="vault">
+            <h2>Feito pra durar.</h2>
+            <p>Ficamos por anos, não por um projeto. Cada empresa do estúdio tem a gente na sociedade e no dia a dia.</p>
+          </div>
+        </div>
+
+        <!-- Pano que varre a tela entre a cena 1 e a 2 -->
+        <div class="cloth" data-cloth aria-hidden="true"></div>
+        <img class="sweep" data-sweep src="/img/pano.webp" alt="" aria-hidden="true" />
+      </div>
+    </section>
+
+    <!-- CONSTELAÇÃO -->
+    <section class="stars" id="perguntas" data-stars>
+      <img class="stars__sage" src="/img/filosofo.webp" alt="Pintura de um velho filósofo de manto vermelho apontando para o céu" loading="lazy" />
+      <svg class="stars__sky" data-sky viewBox="0 0 1000 620" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Constelação de perguntas"></svg>
+      <div class="stars__copy">
+        <h2>Antes de começar,<br />a gente pergunta.</h2>
+        <p>Toda ideia passa por estas sete perguntas. Toque nas estrelas.</p>
+        <p class="stars__q" data-question aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- IDEIA -->
+    <section class="idea" id="ideia">
+      <div class="idea__text">
+        <h2>Mande sua ideia.</h2>
+        <p>Uma frase basta. Lemos tudo e respondemos em até uma semana, mesmo quando a resposta é não.</p>
+      </div>
+      <form class="idea__form" data-form novalidate>
+        <label>Seu nome<input name="nome" autocomplete="name" required /></label>
+        <label>E-mail<input name="email" type="email" autocomplete="email" required /></label>
+        <label>Qual é a ideia?<textarea name="ideia" rows="3" required placeholder="Ex.: um app para pescadores venderem direto da jangada"></textarea></label>
+        <button type="submit" class="btn btn--ink">Enviar ideia</button>
+        <p class="idea__msg" role="status" data-msg></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p class="logo">maturi</p>
+    <p>Rua dos Tabajaras, 400, Praia de Iracema, Fortaleza</p>
+    <p class="foot__note">Maturi é um estúdio fictício, criado para demonstração. As pinturas foram geradas com IA.</p>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
