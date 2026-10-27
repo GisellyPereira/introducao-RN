@@ -3,119 +3,198 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Maturi — estúdio que constrói empresas em Fortaleza</title>
-  <meta name="description" content="A Maturi constrói empresas junto com quem tem a ideia: produto, marca e tecnologia, sem taxa de projeto. Entramos como sócios. Estúdio fictício de demonstração." />
-  <meta name="theme-color" content="#0f62c4" />
-  <meta property="og:title" content="Maturi — coragem faz você aparecer" />
-  <meta property="og:image" content="/img/cajueiro.webp" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><path d='M20 4c8 0 13 6 13 14 0 7-5 12-13 12S7 25 7 18C7 10 12 4 20 4z' fill='%23d1452a'/><path d='M14 31c2 5 10 6 12 0-4 2-8 2-12 0z' fill='%23786c5f'/></svg>" />
+  <title>Pera — a agência que vira sócia</title>
+  <meta name="description" content="A Pera constrói software sob medida, coloca ele onde seus clientes procuram e cobra uma parte da receita que ele gera. Agência fictícia de demonstração." />
+  <meta name="theme-color" content="#1d5fe0" />
+  <meta property="og:title" content="A Pera faz você aparecer." />
+  <meta property="og:image" content="/img/pereira.webp" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 32'><path d='M12 4c2 0 3 3 3.5 6.5C19 12 21 16 21 20a9 9 0 0 1-18 0c0-4 2-8 5.5-9.5C9 7 10 4 12 4z' fill='%231d5fe0'/></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="/img/rendeira.webp" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@500&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="/img/jovem.webp" />
+  <link rel="preload" as="image" href="/img/cortina.webp" />
 </head>
-<body>
-  <header class="bar" data-bar>
-    <a href="#inicio" class="logo">maturi</a>
-    <a href="#ideia" class="bar__cta">Mande sua ideia</a>
-  </header>
+<body class="t-dark">
+  <!-- Moldura fixa: régua da esquerda, guias e botão -->
+  <div class="chrome" aria-hidden="false">
+    <a href="#inicio" class="chrome__logo" aria-label="Pera, início">
+      <svg viewBox="0 0 24 32" aria-hidden="true"><path d="M12 3.5c1.6 0 2.7 2.6 3.2 6.2 3.4 1.6 5.3 5.6 5.3 9.8a8.5 8.5 0 0 1-17 0c0-4.2 1.9-8.2 5.3-9.8.5-3.6 1.6-6.2 3.2-6.2z"/></svg>
+    </a>
+    <span class="chrome__grid" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <span class="chrome__rail" aria-hidden="true"></span>
+    <span class="chrome__guide chrome__guide--top" aria-hidden="true"></span>
+    <span class="chrome__guide chrome__guide--mid" aria-hidden="true"><b>+</b></span>
+    <p class="chrome__label" data-label aria-hidden="true"></p>
+    <a href="#candidatura" class="pill pill--apply">Candidatura <span>+</span></a>
+  </div>
 
   <main id="inicio">
-    <!-- O FILME: um palco fixo, o scroll é a linha do tempo -->
-    <section class="film" data-film aria-label="Como a Maturi trabalha">
+    <section class="film" data-film aria-label="Como a Pera trabalha">
       <div class="stage" data-stage>
 
-        <!-- Cena 1: a rendeira no pedestal -->
-        <div class="scene s-hero" data-scene="hero">
-          <img class="s-hero__drape" src="/img/pano.webp" alt="" aria-hidden="true" />
-          <img class="s-hero__figure" src="/img/rendeira.webp" alt="Pintura de uma mulher de vestido de renda branca e faixa vermelha, em pé sobre um pedestal de pedra, segurando um caju" />
-          <div class="copy copy--hero" data-copy="hero">
-            <h1>Coragem faz<br />você aparecer.</h1>
-            <p>Somos um estúdio de Fortaleza que constrói empresas junto com quem tem a ideia.</p>
-            <a href="#perguntas" class="btn btn--line" data-skip>Ver como funciona</a>
+        <!-- 1. Jovem saindo da cortina -->
+        <div class="sc sc--hero" data-sc="hero">
+          <div class="hero__gap" aria-hidden="true"></div>
+          <img class="hero__curtain" src="/img/cortina.webp" alt="" aria-hidden="true" />
+          <div class="hero__ledge" aria-hidden="true"></div>
+          <img class="hero__youth" data-youth src="/img/jovem.webp" alt="Pintura de um jovem grego de túnica branca e faixa vermelha saindo de trás de uma cortina" />
+          <div class="txt txt--hero" data-t="hero">
+            <h1>A Pera faz você aparecer.</h1>
+            <p class="lead">Não uma agência que cobra por hora.<br />Um sócio no resultado.</p>
+            <a href="#candidatura" class="pill pill--black">Solicitar parceria <span>+</span></a>
+          </div>
+          <div class="below" data-t="hero-below">
+            <span class="tag">Se você já fatura</span>
+            <p>Construímos software sob medida, colocamos ele onde seus clientes procuram e cobramos uma parte da receita que ele gera. Sem mensalidade, sem horas: se você não cresce, a gente não recebe.</p>
           </div>
         </div>
 
-        <!-- Cena 2: mergulho no cajueiro e a colheita -->
-        <div class="scene s-tree" data-scene="tree">
-          <img class="s-tree__img" data-tree src="/img/cajueiro.webp" alt="" aria-hidden="true" />
-          <img class="s-tree__img s-tree__pick" data-pick src="/img/colheita.webp" alt="Pintura de duas mãos com punho de renda colhendo um caju do galho" />
-          <div class="s-tree__veil" aria-hidden="true"></div>
-          <div class="copy copy--ink" data-copy="tree">
-            <h2>A gente constrói.</h2>
-            <p>Produto, marca e tecnologia feitos por um time só, do primeiro rascunho ao primeiro cliente.</p>
+        <!-- Cortina que toma a tela + faixa -->
+        <img class="fx-curtain" data-fx-curtain src="/img/cortina.webp" alt="" aria-hidden="true" />
+        <img class="fx-sash" data-fx-sash src="/img/faixa.webp" alt="" aria-hidden="true" />
+
+        <!-- 2. Enxerto -->
+        <div class="sc sc--graft" data-sc="graft">
+          <img class="full" data-graft src="/img/enxerto.webp" alt="Pintura de mãos com punho de renda enxertando um galho de pereira" />
+        </div>
+
+        <!-- 3. Pereira: construímos / posicionamos -->
+        <div class="sc sc--tree" data-sc="tree">
+          <img class="full" data-tree src="/img/pereira.webp" alt="Pintura de uma pereira carregada de peras" />
+          <div class="tree__shade" aria-hidden="true"></div>
+          <img class="tree__hand" data-hand src="/img/mao.webp" alt="Mão subindo para colher uma pera dourada" />
+          <div class="txt txt--mid" data-t="build">
+            <h2>Construímos.</h2>
+          </div>
+          <div class="below" data-t="build-below">
+            <span class="tag">Software sob medida</span>
+            <p>Feito para o seu negócio e pensado, desde a primeira linha, para ser encontrado.</p>
+          </div>
+          <div class="txt txt--mid" data-t="rank">
+            <h2>Posicionamos.</h2>
+          </div>
+          <div class="below" data-t="rank-below">
+            <span class="tag">Busca</span>
+            <p>Seu produto no topo de onde o cliente já está procurando.</p>
+          </div>
+          <div class="tree__dark" data-tree-dark aria-hidden="true"></div>
+        </div>
+
+        <!-- 4. Retrato e a pera partida -->
+        <div class="sc sc--portrait" data-sc="portrait">
+          <img class="full portrait__img" data-portrait src="/img/retrato.webp" alt="Retrato de um jovem de veludo verde segurando uma pera dourada" />
+          <div class="txt txt--mid" data-t="share">
+            <h2>Dividimos o que<br />ele rende.</h2>
+          </div>
+          <div class="below" data-t="share-below">
+            <span class="tag">Sociedade</span>
+            <p>Nenhuma hora cobrada. A gente é dono do resultado junto com você.</p>
+          </div>
+          <div class="halves" data-halves aria-hidden="true">
+            <div class="halves__l"><img src="/img/metades.webp" alt="" /></div>
+            <div class="halves__r"><img src="/img/metades.webp" alt="" /></div>
           </div>
         </div>
 
-        <!-- Cena 3: o retrato -->
-        <div class="scene s-portrait" data-scene="portrait">
-          <img src="/img/retrato.webp" alt="Retrato renascentista de um jovem de veludo verde olhando para um caju que segura na mão" />
-          <div class="copy copy--ink" data-copy="portrait">
-            <h2>E divide o que<br />ela render.</h2>
-            <p>Não cobramos pelo trabalho. Entramos como sócios e só ganhamos quando a empresa cresce.</p>
+        <!-- 5. Céu com nuvens em retícula -->
+        <div class="sc sc--sky" data-sc="sky">
+          <img class="cloud" data-cloud="0" src="/img/nuvem0.webp" alt="" aria-hidden="true" />
+          <img class="cloud" data-cloud="1" src="/img/nuvem1.webp" alt="" aria-hidden="true" />
+          <img class="cloud" data-cloud="2" src="/img/nuvem2.webp" alt="" aria-hidden="true" />
+          <img class="cloud" data-cloud="3" src="/img/nuvem3.webp" alt="" aria-hidden="true" />
+          <div class="ruler" data-ruler aria-hidden="true"></div>
+          <div class="col" data-t="sky">
+            <span class="tag">Busca e software, juntos</span>
+            <h3>Tudo que é preciso para ser encontrado, sob o mesmo teto.</h3>
+            <p>Busca e software são uma disciplina só na Pera. O produto nasce pensado para ranquear, e o SEO é feito por quem escreveu o código.</p>
+          </div>
+          <img class="sky__pear" data-sky-pear src="/img/pera-ht.webp" alt="" aria-hidden="true" />
+        </div>
+
+        <!-- 6. A obra -->
+        <div class="sc sc--build" data-sc="build">
+          <img class="full" data-perona src="/img/perona.webp" alt="Pintura de uma pera gigante dourada em construção, cercada de andaimes, com um operário pintando" />
+          <img class="full" data-andaime src="/img/andaime.webp" alt="Pintura de uma mulher lendo uma planta e um operário puxando uma corda no andaime" />
+          <div class="col col--top" data-t="build-col">
+            <span class="tag">Do zero</span>
+            <h3>Desenhamos e construímos o que gera receita: lojas, marketplaces, sistemas de reserva, o motor da sua empresa.</h3>
+            <p>Cada projeto parte de uma pergunta de negócio, não de um briefing. Arquitetura, velocidade e conteúdo são decididos pensando em quanto vão render.</p>
           </div>
         </div>
 
-        <!-- Transição em retícula -->
-        <canvas class="dither" data-dither aria-hidden="true"></canvas>
-
-        <!-- Cena 4: céu e jangada -->
-        <div class="scene s-sky" data-scene="sky">
-          <img class="s-sky__bg" src="/img/ceu.webp" alt="" aria-hidden="true" />
-          <img class="s-sky__raft" data-raft src="/img/jangada.webp" alt="Pintura surreal de uma jangada carregando um caju gigante, flutuando no céu" />
-          <div class="copy copy--sky" data-copy="sky">
-            <h2>Sem mensalidade.<br />Sem taxa de projeto.</h2>
-            <p>Uma parte da empresa em troca do time inteiro trabalhando nela. Se não der fruto, a gente também não colhe.</p>
+        <!-- 7. Os termos: gravura vista de cima -->
+        <div class="sc sc--terms" data-sc="terms">
+          <div class="terms__plate" data-plate><img src="/img/gravura.webp" alt="Gravura antiga vista de cima de um canteiro de obras com uma pera dourada no centro" /></div>
+          <div class="terms__text" data-t="terms">
+            <h2>Sem taxa. Uma parte<br />do que crescer.</h2>
+            <p class="serif">Você não paga nada para começar: sem mensalidade, sem taxa de projeto, sem horas no relógio. A gente banca o custo de estratégia, desenvolvimento, conteúdo e links.</p>
+            <div class="terms__row">
+              <span class="tag tag--paper">Transparência total</span>
+              <p>Nosso pagamento é uma parte combinada da receita que o trabalho gera, medida a partir do seu ponto de partida e visível para os dois lados. Tudo que construímos é seu: o software, o conteúdo, os rankings. E aceitamos poucos sócios por vez, porque quando a gente só recebe pelo resultado, o sim precisa ser merecido.</p>
+            </div>
           </div>
         </div>
 
-        <!-- Cena 5: a abóbada -->
-        <div class="scene s-vault" data-scene="vault">
-          <div class="s-vault__dome" data-dome><img src="/img/abobada.webp" alt="Teto de igreja barroca visto de baixo, com molduras douradas e um caju pintado no centro" /></div>
-          <div class="copy copy--ink copy--vault" data-copy="vault">
-            <h2>Feito pra durar.</h2>
-            <p>Ficamos por anos, não por um projeto. Cada empresa do estúdio tem a gente na sociedade e no dia a dia.</p>
+        <!-- Onda em retícula -->
+        <canvas class="wave" data-wave aria-hidden="true"></canvas>
+
+        <!-- 8. Dizemos não -->
+        <div class="sc sc--no" data-sc="no">
+          <img class="cloud cloud--no" src="/img/nuvem2.webp" alt="" aria-hidden="true" />
+          <div class="falling" data-falling aria-hidden="true"></div>
+          <img class="no__woman" data-woman src="/img/podadora.webp" alt="Pintura de uma mulher grega podando uma pereira num vaso de pedra" />
+          <div class="no__title" data-t="no">
+            <h2>Dizemos não mais<br />do que sim.</h2>
+          </div>
+          <div class="no__bottom" data-t="no-below">
+            <p class="serif">Nossos sócios vendem produtos e serviços de verdade, já têm receita para crescer e competem em mercados onde o cliente procura: e-commerce, SaaS, marketplaces, empresas de serviço.</p>
+            <div class="terms__row">
+              <span class="tag">Não é para todos</span>
+              <p>Se isso é você, os termos acima são a proposta inteira. Se você ainda não fatura, quer alugar desenvolvedores por hora ou precisa de resultado até sexta, somos o sócio errado. E falamos isso logo na primeira conversa.</p>
+            </div>
           </div>
         </div>
 
-        <!-- Pano que varre a tela entre a cena 1 e a 2 -->
-        <div class="cloth" data-cloth aria-hidden="true"></div>
-        <img class="sweep" data-sweep src="/img/pano.webp" alt="" aria-hidden="true" />
+        <!-- 9. Perguntas antes de assinar -->
+        <div class="sc sc--ask" data-sc="ask">
+          <img class="cloud cloud--ask" src="/img/nuvem0.webp" alt="" aria-hidden="true" />
+          <img class="ask__branches" data-branches src="/img/galhos.webp" alt="" aria-hidden="true" />
+          <h2 class="ask__title" data-t="ask">Perguntas antes de <em>assinar</em></h2>
+          <svg class="ask__lines" data-ask-lines viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
+          <dl class="ask__qs" data-qs>
+            <div class="q" data-q="0"><dt>Como vocês medem o resultado?</dt><dd>Contra o seu faturamento de hoje, num painel que você também vê.</dd></div>
+            <div class="q" data-q="1"><dt>Quanto tempo até dar retorno?</dt><dd>Os primeiros sinais vêm em três a seis meses. O resto, a gente constrói junto.</dd></div>
+            <div class="q" data-q="2"><dt>Quanto custa no fim?</dt><dd>Uma parte do que crescer. Se não crescer, não custa nada.</dd></div>
+            <div class="q" data-q="3"><dt>E se a gente quiser parar?</dt><dd>Tudo fica com você: código, conteúdo e domínio.</dd></div>
+          </dl>
+        </div>
+
       </div>
     </section>
 
-    <!-- CONSTELAÇÃO -->
-    <section class="stars" id="perguntas" data-stars>
-      <img class="stars__sage" src="/img/filosofo.webp" alt="Pintura de um velho filósofo de manto vermelho apontando para o céu" loading="lazy" />
-      <svg class="stars__sky" data-sky viewBox="0 0 1000 620" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Constelação de perguntas"></svg>
-      <div class="stars__copy">
-        <h2>Antes de começar,<br />a gente pergunta.</h2>
-        <p>Toda ideia passa por estas sete perguntas. Toque nas estrelas.</p>
-        <p class="stars__q" data-question aria-live="polite"></p>
+    <!-- 10. Constelação + candidatura -->
+    <section class="apply" id="candidatura">
+      <img class="cloud apply__cloud-l" src="/img/nuvem1.webp" alt="" aria-hidden="true" />
+      <img class="cloud apply__cloud-r" src="/img/nuvem3.webp" alt="" aria-hidden="true" />
+      <svg class="apply__sky" data-stars viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+      <img class="apply__sage" src="/img/filosofo.webp" alt="Pintura de um jovem grego de manto vermelho apontando para as estrelas" loading="lazy" />
+      <div class="apply__intro">
+        <span class="tag">A candidatura</span>
+        <p>Conte o que você vende e onde quer crescer. Toda candidatura é lida e, quando o modelo encaixa, respondemos em até uma semana.</p>
       </div>
-    </section>
-
-    <!-- IDEIA -->
-    <section class="idea" id="ideia">
-      <div class="idea__text">
-        <h2>Mande sua ideia.</h2>
-        <p>Uma frase basta. Lemos tudo e respondemos em até uma semana, mesmo quando a resposta é não.</p>
-      </div>
-      <form class="idea__form" data-form novalidate>
-        <label>Seu nome<input name="nome" autocomplete="name" required /></label>
-        <label>E-mail<input name="email" type="email" autocomplete="email" required /></label>
-        <label>Qual é a ideia?<textarea name="ideia" rows="3" required placeholder="Ex.: um app para pescadores venderem direto da jangada"></textarea></label>
-        <button type="submit" class="btn btn--ink">Enviar ideia</button>
-        <p class="idea__msg" role="status" data-msg></p>
+      <form class="apply__form" data-form novalidate>
+        <div class="glass-row">
+          <label class="glass glass--pill"><span class="sr">Seu nome</span><input name="nome" placeholder="Seu nome" autocomplete="name" required /></label>
+          <label class="glass glass--pill"><span class="sr">E-mail de trabalho</span><input name="email" type="email" placeholder="E-mail de trabalho" autocomplete="email" required /></label>
+        </div>
+        <label class="glass glass--area"><span class="sr">O que você quer fazer crescer?</span><textarea name="crescer" rows="4" placeholder="O que você quer fazer crescer?" required></textarea></label>
+        <button type="submit" class="pill pill--black pill--send">Enviar candidatura</button>
+        <p class="apply__msg" role="status" data-msg></p>
       </form>
+      <p class="apply__foot">Pera é uma agência fictícia, criada para demonstração. Pinturas geradas com IA.</p>
     </section>
   </main>
-
-  <footer class="foot">
-    <p class="logo">maturi</p>
-    <p>Rua dos Tabajaras, 400, Praia de Iracema, Fortaleza</p>
-    <p class="foot__note">Maturi é um estúdio fictício, criado para demonstração. As pinturas foram geradas com IA.</p>
-  </footer>
 
   <script type="module" src="/src/main.js"></script>
 </body>
